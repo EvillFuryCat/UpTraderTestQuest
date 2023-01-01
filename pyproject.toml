@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "uptrader-test"
+version = "0.1.0"
+description = ""
+authors = ["Konstantin <k1st.volkov@gmail.com>"]
+readme = "README.md"
+packages = [{include = "uptrader_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "^4.1.4"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+flake8 = "^6.0.0"
+pytest-django = "^4.5.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
