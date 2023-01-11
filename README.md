@@ -18,7 +18,14 @@
 
 ## Реализация:
 Виртуальное окружение созданно с помощью пакетного менеджера `Poetry`
+
 Реализацию данното тестового задания вы можете увидеть в ветке `develop`.
+
+Миграции:
+
+`poetry run python manage.py makemigrations`
+
+`poetry run python manage.py migrate`
 
 Запуск с помощью команды `poetry run python manage.py runserver 0.0.0.0:8000` Из корня проекта.
 
