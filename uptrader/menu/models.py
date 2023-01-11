@@ -3,8 +3,8 @@ from django.http import Http404
 from django.urls import reverse
 
 class Menu(models.Model):
-    title = models.CharField(max_length=50, verbose_name="Title")
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    title = models.CharField(max_length=50, verbose_name="title")
+    parent = models.ForeignKey('self', on_delete=models.PROTECT, blank=True, null=True)
     explicit_url = models.CharField(max_length=100, blank=True, null=True, unique=True)
     named_url = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
@@ -25,7 +25,7 @@ class Menu(models.Model):
         return self.title
 
     def children(self):
-        return self.menuitem_set.all()
+        return self.menu_set.all()
 
     def get_elder_ids(self):
         if self.parent:

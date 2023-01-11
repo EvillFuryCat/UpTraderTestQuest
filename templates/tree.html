@@ -1,0 +1,15 @@
+{% load menu_extract %}
+
+
+
+{% for menu in menu_name %}
+    <details {% if menu_item.id in unwrapped_menu_item_ids %} open {% endif %}>
+        <summary> {{ menu }} </summary>
+    
+
+        {% for menu_children in menu.children %}
+            {% draw_menu_item_children menu_children.id %}
+            
+        {% endfor %}
+    </details>
+{% endfor %}
