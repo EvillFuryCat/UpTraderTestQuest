@@ -6,14 +6,6 @@ from django.core.exceptions import ObjectDoesNotExist
 
 register = template.Library()
 
-
-# @register.inclusion_tag('tree.html', takes_context=True)
-# def get_menu(context, menu_name):
-#     menu = Menu.objects.filter(title=menu_name, parent=None)
-#     return {
-#         "menu_name": menu,
-#         }
-
 @register.inclusion_tag('tree.html', takes_context=True)
 def draw_menu(context, menu_name):
     menu = Menu.objects.filter(parent=None)
