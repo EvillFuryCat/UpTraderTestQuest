@@ -1,5 +1,4 @@
 from django import template
-from django.shortcuts import get_object_or_404
 from uptrader.menu.models import Menu
 from django.core.exceptions import ObjectDoesNotExist
 
